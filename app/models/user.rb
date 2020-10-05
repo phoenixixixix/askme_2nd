@@ -4,8 +4,8 @@ class User < ApplicationRecord
   # параметри роботи модуля шифрування паролів
   ITERATIONS = 20_000
   DIGEST = OpenSSL::Digest::SHA256.new
-  EMAIL_FORMAT = /\A[a-z\d_+.\-]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  PASSWORD_FORMAT = /\A[a-z\d_]*\z/i
+  EMAIL_FORMAT = /\A[a-z\d_+.\-]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/
+  PASSWORD_FORMAT = /\A\w+\z/
 
   has_many :questions
 
@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :password, presence: true, on: :create
   validates :password, confirmation: true
 
-  
+
   before_save :encrypt_password
 
 
