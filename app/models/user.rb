@@ -7,7 +7,7 @@ class User < ApplicationRecord
   EMAIL_FORMAT = /\A[a-z\d_+.\-]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/
   USERNAME_FORMAT = /\A\w+\z/
 
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
   attr_accessor :password
 
