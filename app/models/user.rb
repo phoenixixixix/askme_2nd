@@ -5,7 +5,7 @@ class User < ApplicationRecord
   ITERATIONS = 20_000
   DIGEST = OpenSSL::Digest::SHA256.new
   EMAIL_FORMAT = /\A[a-z\d_+.\-]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/
-  PASSWORD_FORMAT = /\A\w+\z/
+  USERNAME_FORMAT = /\A\w+\z/
 
   has_many :questions
 
@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   validates :email, :username, presence: true, uniqueness: true
   validates :email, format: { with: EMAIL_FORMAT }
-  validates :username, length: { maximum: 40 }, format: { with: PASSWORD_FORMAT }
+  validates :username, length: { maximum: 40 }, format: { with: USERNAME_FORMAT }
 
   validates :password, presence: true, on: :create
   validates :password, confirmation: true
