@@ -51,7 +51,7 @@ class User < ApplicationRecord
   private
 
   def to_downcase
-    self.username&.downcase
-    self.email&.downcase
+    self.username&.downcase!
+    self.email&.downcase!
   end
 end
