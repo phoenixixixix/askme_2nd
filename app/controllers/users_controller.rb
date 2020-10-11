@@ -10,7 +10,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    @user.save
+    if @user.save
+      redirect_to root_url, notice: 'User created'
+    end
   end
 
   def edit
