@@ -35,6 +35,11 @@
   </div>
 </div>
 
+<div class="question-count-text text-lead">
+  <%= @question_count %>
+  <%= declination(@question_count, 'вопрос', 'вопроса', 'вопросов') %>
+</div>
+
 <div class="column-3-4">
   <div class="user-questions buffer-both">
     <div class="question-list">
