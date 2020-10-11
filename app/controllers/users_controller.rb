@@ -21,6 +21,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find params[:id]
+    @question = @user.questions.order(created_at: :desc)
+
+    @new_question = @user.questions.build
+
     @question_count = @question.count
   end
 
