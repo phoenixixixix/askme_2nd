@@ -1,42 +1,32 @@
 class UsersController < ApplicationController
   def index
-    @users = [
-      User.new(
-        id: 1,
-        name: 'Oleg',
-        username: 'phoenixixixix',
-        avatar_url: 'https://avatarfiles.alphacoders.com/158/15867.jpg'
-      ),
-      User.new(
-        id: 2,
-        name: 'Vitaliy',
-        username: 'vetal',
-        avatar_url: nil
-      )
-    ]
+    @users = User.all
   end
 
   def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+
+    @user.save
   end
 
   def edit
   end
 
   def show
-    @user = User.new(
-      name: 'Oleg',
-      username: 'phoenixixixix',
-      avatar_url: 'https://avatarfiles.alphacoders.com/158/15867.jpg'
-    )
-
-    @question = [
-      Question.new(text: 'How are you?', created_at: Date.parse('27.03.2016')),
-      Question.new(text: 'hello kiti', created_at: Date.parse('27.03.2016')),
-      Question.new(text: 'Where you from?', created_at: Date.parse('27.03.2016'))
-    ]
-
-    @new_question = Question.new
-
     @question_count = @question.count
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:email,
+                                 :password,
+                                 :password_confirmation,
+                                 :name,
+                                 :username,
+                                 :avatar_url)
   end
 end
