@@ -16,4 +16,8 @@ module ApplicationHelper
     when (5..9), 0 then okonchanij
     end
   end
+
+  def fa_icon(icon_class)
+    content_tag 'span', '', class: "fa fa-#{icon_class}"
+  end
 end
