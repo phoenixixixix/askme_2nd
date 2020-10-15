@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url, notice: 'ви залогінені'
     else
-      flash.new.alert = 'email or password not correct'
+      flash.now.alert = 'email or password not correct'
       render :new
     end
   end
