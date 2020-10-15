@@ -9,17 +9,17 @@ class UsersController < ApplicationController
   end
 
   def new
-    redirect_to root_url, alert: 'Ви вже залогінені' if current_user.present?
+    redirect_to root_url, alert: 'Ви вже ввійшли' if current_user.present?
     @user = User.new
   end
 
   def create
-    redirect_to root_url, alert: 'Ви вже залогінені' if current_user.present?
+    redirect_to root_url, alert: 'Ви вже ввійшли' if current_user.present?
 
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to root_url, notice: 'User created'
+      redirect_to root_url, notice: 'Профіль створено'
     else
       render 'new'
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: 'User updated'
+      redirect_to user_path(@user), notice: 'Дані профілю оновлено'
     else
       render 'edit'
     end

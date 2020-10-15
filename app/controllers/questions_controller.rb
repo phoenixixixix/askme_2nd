@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      redirect_to user_path(@question.user), notice: 'Question was successfully created.'
+      redirect_to user_path(@question.user), notice: 'Ви поставили запитання'
     else
       render :new
     end
@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1
   def update
     if @question.update(question_params)
-      redirect_to user_path(@question.user), notice: 'Question was successfully saved.'
+      redirect_to user_path(@question.user), notice: 'Питання оновлено'
     else
       render :edit
     end
@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
     user = @question.user
     @question.destroy
 
-    redirect_to user_path(@question.user), notice: 'Question was successfully destroyed.'
+    redirect_to user_path(@question.user), notice: 'Питання видалено'
   end  
 
   private

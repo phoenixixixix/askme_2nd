@@ -7,8 +7,9 @@ module ApplicationHelper
     end
   end
 
-  def declination(count, okonchanie, okonchania, okonchanij) # <- передаєм question.size
-    return okonchanij if (11..14).include? count % 100 # <- виключення
+  # налаштовано під ru мову
+  def declination(count, okonchanie, okonchania, okonchanij)
+    return okonchanij if (11..14).include? count % 100
 
     case count % 10
     when 1 then okonchanie

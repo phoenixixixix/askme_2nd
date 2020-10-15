@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   def reject_user
-    redirect_to root_path, alert: 'ни туда О_о'
+    redirect_to root_path, alert: 'Туди не можна:('
   end
 end

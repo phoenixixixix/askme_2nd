@@ -1,13 +1,12 @@
-<%# Страница с формой логина %>
 <div class="container content-wrapper buffer-both">
   <h1 class="title-medium">Войти на сайт</h1>
 
   <div class="column-1-2">
     <div class="form">
-      <%# Рисуем форму, которая будет отправлена по адресу /sessions %>
+      <%# форма, яка буде відправлена за адресою / sessions%>
       <%= form_tag sessions_path do %>
         <div class="form-field">
-          <%= label_tag :email, 'Логин (email)', class: 'form-label' %>
+          <%= label_tag :email, 'Логін (email)', class: 'form-label' %>
           <%= text_field_tag :email, params[:email], class: 'form-text-field' %>
         </div>
 
@@ -17,7 +16,7 @@
         </div>
 
         <div class="form-action">
-          <%= submit_tag "Войти", class: 'button button-dark button-small' %>
+          <%= submit_tag "Увійти", class: 'button button-dark button-small' %>
         </div>
       <% end %>
     </div>
