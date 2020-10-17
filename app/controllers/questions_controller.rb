@@ -26,8 +26,8 @@ class QuestionsController < ApplicationController
     user = @question.user
     @question.destroy
 
-    redirect_to user_path(@question.user), notice: 'Питання видалено'
-  end  
+    redirect_to user_path(user), notice: 'Питання видалено'
+  end
 
   private
   def authorize_user
