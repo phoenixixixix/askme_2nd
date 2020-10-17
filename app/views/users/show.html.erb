@@ -15,8 +15,19 @@
     @<%= @user.username %>
   </h2>
 
-  <div class="user-ask-button container text-center">
-    <%= link_to 'Завитай мене!', '', class: 'button button-light', id: 'ask-button' %>
+  <div class="user-statistics container text-center">
+    <div class="column-1-3">
+      <h1 class="title-small"><%= @questions_count %></h1>
+      <%= declination(@questions_count, 'запитання', 'запитання', 'запитань') %>
+    </div>
+    <div class="column-1-3">
+      <h1 class="title-small"><%= @answers_count %></h1>
+      <%= declination(@answers_count, 'відповідь', 'відповіді', 'відповідей') %>
+    </div>
+    <div class="column-1-3">
+      <h1 class="title-small"><%= @unanswered_count %></h1>
+      <p>без відповіді</p>
+    </div>
   </div>
 </div>
 
@@ -37,11 +48,6 @@
       <% end %>
     </div>
   </div>
-</div>
-
-<div class="question-count-text text-lead">
-  <%= @question_count %>
-  <%= declination(@question_count, 'запитання', 'запитання', 'запитань') %>
 </div>
 
 <div class="column-3-4">
