@@ -14,6 +14,12 @@
   <h2 class="title-small buffer-both">
     @<%= @user.username %>
   </h2>
+</div>
+
+<div class="user-details">
+  <div class="user-ask-button container text-center">
+    <%= link_to "Запитай мене", '', class: 'button button-light', id: 'ask-button' %>
+  </div>
 
   <div class="user-statistics container text-center">
     <div class="column-1-3">
