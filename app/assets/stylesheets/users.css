@@ -67,4 +67,8 @@
   .user-ask-button {
     display: none;
   }
+
+  .user-question-form-div {
+    display: block !important;
+  }
 }
