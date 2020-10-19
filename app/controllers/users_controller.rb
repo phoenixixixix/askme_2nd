@@ -62,6 +62,7 @@ class UsersController < ApplicationController
                                  :password_confirmation,
                                  :name,
                                  :username,
-                                 :avatar_url)
+                                 :avatar_url,
+                                 :prof_bg_color)
   end
 end
