@@ -28,6 +28,11 @@
   box-sizing: border-box;
   border: 1px solid #00b6ad;
   border-radius: 3px;
+  height: 40px;
+}
+
+.form-color {
+  padding-right: 50%;
 }
 
 .form-action {
