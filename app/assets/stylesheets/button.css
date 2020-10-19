@@ -9,6 +9,11 @@
   border: none;
 }
 
+.button-delete {
+  background: #ffffff;
+  color: #ff4646;
+}
+
 .button-dark {
   background: #2e2f41;
   color: #fff;
@@ -28,4 +33,10 @@
   font-size: 15px;
   line-height: 15px;
   padding: 7px 15px;
+}
+
+.button-link {
+  text-decoration: underline;
+  font-weight: normal;
+  text-shadow: none;
 }

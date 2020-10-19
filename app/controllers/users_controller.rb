@@ -9,18 +9,18 @@ class UsersController < ApplicationController
   end
 
   def new
-    redirect_to root_url, alert: 'Ви вже ввійшли' if current_user.present?
+    redirect_to root_path, alert: 'Ви вже ввійшли' if current_user.present?
     @user = User.new
   end
 
   def create
-    redirect_to root_url, alert: 'Ви вже ввійшли' if current_user.present?
+    redirect_to root_path, alert: 'Ви вже ввійшли' if current_user.present?
 
     @user = User.new(user_params)
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: 'Профіль створено'
+      redirect_to root_path, notice: 'Профіль створено'
     else
       render 'new'
     end
@@ -44,6 +44,12 @@ class UsersController < ApplicationController
     @questions_count = @question.count
     @answers_count = @question.where.not(answer: nil).count
     @unanswered_count = @questions_count - @answers_count
+  end
+
+  def destroy
+    @user.destroy
+    session[:user_id] = nil
+    redirect_to root_path, notice: 'Профіль видалено'
   end
 
   private
