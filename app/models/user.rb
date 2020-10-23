@@ -8,10 +8,10 @@ class User < ApplicationRecord
   USERNAME_FORMAT = /\A\w+\z/
   COLOR_FORMAT = /\A#([A-Fa-f0-9]{3}){1,2}\z/
 
-  has_many :questions, dependent: :destroy
-
   attr_accessor :password
 
+  has_many :questions, dependent: :destroy
+  has_many :authored_questions, class_name: 'Question', foreign_key: 'author_id', dependent: :nullify
 
   validates :email, :username, presence: true, uniqueness: true
   validates :email, format: { with: EMAIL_FORMAT }
