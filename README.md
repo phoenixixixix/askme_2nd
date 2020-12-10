@@ -1,24 +1,5 @@
-# README
+# Askme 
+'[Askme][1]' is a social networking site works on the principle of '[ask.fm][2]' where users create profiles and can send each other questions.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[1]: https://akme-rails-app.herokuapp.com/
+[2]: https://ask.fm/
